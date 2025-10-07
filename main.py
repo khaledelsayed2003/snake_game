@@ -24,10 +24,9 @@ def move():
         parts_list[1].forward(60)
         parts_list[0].forward(60)
 
-        
+       
         
 move()
-
 
 
 
