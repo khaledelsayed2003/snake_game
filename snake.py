@@ -1,8 +1,11 @@
 from turtle import Turtle
 starting_positions = [(0, 0), (-20, 0), (-40, 0)]
 Move_distance = 20
-left_deg = 90
-right_deg = 90
+left_direction = 180
+right_direction = 0
+up_direction = 90
+down_direction = 270
+
 
 class Snake:
     
@@ -27,8 +30,20 @@ class Snake:
         
         
     def turn_left(self):
-        self.segments_list[0].left(left_deg)
+        if self.segments_list[0].heading() != right_direction:
+            self.segments_list[0].setheading(left_direction)
+
     def turn_right(self):
-        self.segments_list[0].right(right_deg)    
+        if self.segments_list[0].heading() != left_direction:
+            self.segments_list[0].setheading(right_direction)
+        
+    def move_up(self):
+        if self.segments_list[0].heading() != down_direction:
+            self.segments_list[0].setheading(up_direction)
+       
+    def move_down(self):
+        if self.segments_list[0].heading() != up_direction:
+            self.segments_list[0].setheading(down_direction)
+         
         
         
