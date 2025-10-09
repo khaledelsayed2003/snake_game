@@ -43,7 +43,5 @@ class Snake:
        
     def move_down(self):
         if self.segments_list[0].heading() != up_direction:
-            self.segments_list[0].setheading(down_direction)
-         
-        
+            self.segments_list[0].setheading(down_direction)          
         

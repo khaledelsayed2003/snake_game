@@ -1,7 +1,9 @@
 """snake game"""
-from turtle import Turtle, Screen
+from turtle import Screen
 from snake import Snake
+from food import Food
 import time
+from random import randint
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -11,7 +13,7 @@ screen.tracer(0)
 user_input = screen.textinput(title="Welcome to the snake game!", prompt="Type 'y' to start the game: ").lower()
 
 snake = Snake() # create an object called snake from the class Snake that we imported from the file snake.
-
+food = Food()
 
 screen.listen() #An event listeners
 screen.onkey(key="Left", fun=snake.turn_left)
@@ -32,8 +34,10 @@ else:
 while game_is_on:
     screen.update()
     time.sleep(0.05)
-    
     snake.move()
+    
+    if snake.segments_list[0].distance(food) < 14:
+        food.refresh()
     
      
 
