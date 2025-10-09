@@ -20,7 +20,14 @@ class Snake:
             new_segment.penup()
             new_segment.goto(part) #to move it to that exact position x and y axis.
             self.segments_list.append(new_segment)
-            
+    
+    # this fun to extend the snake eachtime when it eats food.        
+    def extend(self):
+        new_segment = Turtle(shape="square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(self.segments_list[-1].position()) #to move it to that exact position x and y axis.
+        self.segments_list.append(new_segment)     
             
     def move(self):
         for l_two_segment in range(len(self.segments_list)-1, 0, -1):
