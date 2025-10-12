@@ -39,23 +39,6 @@ Move the snake with the arrow keys, eat food to grow, and try not to hit the wal
     Uses only the standard library (turtle, time, random) — no extra installs
 
 
-"""
-snake_game/
-├─ main.py            # game loop & screen setup
-├─ snake.py           # Snake class (movement, turning, extend)
-├─ food.py            # Food class (random position, refresh)
-├─ scoreboard.py      # Score class (display & game over)
-├─ README.md
-└─ assets/            # (optional) shapes, background, screenshots
-      ├─ Start_Game.png
-      ├─ Score_starting0.png
-      ├─ Score_refresh.png
-      ├─ Wall_collision.png
-      └─ Tail_collision.png
-"""
-       
-
-
 
 
 🧩 How It Works (quick notes)
