@@ -41,20 +41,21 @@ while game_is_on:
     
     if snake.segments_list[0].distance(food) < 15:
         food.refresh()
-        score.refresh()
+        score.increase_score()
         snake.extend()
     
     # Detect Collisions with the Wall
     if snake.segments_list[0].xcor() >= 285 or snake.segments_list[0].xcor() <= -285 or snake.segments_list[0].ycor() >= 285 or snake.segments_list[0].ycor() <= -285:
-        game_is_on =False  
-        score.game_over()
-    
+        score.reset()
+        snake.reset()
+        time.sleep(0.2)    
+        
     # Detect Collisions with the the tail
     for segment in snake.segments_list[1:]:   # to slice the list and start comparing from any part after the head(index 0).
         if snake.segments_list[0].distance(segment) < 10:
-            game_is_on =False  
-            score.game_over()
-            
+            score.reset()
+            snake.reset()
+            time.sleep(0.2)
           
     
      
